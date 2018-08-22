@@ -271,4 +271,20 @@
     <string name="phone_number">Phone No.</string>
     <string name="change_password">Change Password</string>
     <string name="cancel">Cancel</string>
+    <string name="about_us">About Us</string>
+
+    <string-array name="about">
+        <item>Version</item>
+        <item>Official website</item>
+        <item>Feedback</item>
+        <item>Having Trouble</item>
+        <item>Developed By:</item>
+    </string-array>
+    <string-array name="about_detail">
+        <item>Version: 0.1</item>
+        <item>www.cliky.ca</item>
+        <item>Send us an email</item>
+        <item>Share with us the problem</item>
+        <item>Utsav Ashish Koju / Web-android-iphone developer</item>
+    </string-array>
 </resources>

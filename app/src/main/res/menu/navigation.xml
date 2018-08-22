@@ -12,7 +12,9 @@
         android:title="@string/title_Offers" />
     <item
         android:id="@+id/navigation_account"
-        android:icon="@android:drawable/ic_menu_today"
+        android:icon="@drawable/ic_account_circle_black"
         android:title="@string/title_account" />
-
+    <item android:id="@+id/navigation_about"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/about_us"/>
 </menu>

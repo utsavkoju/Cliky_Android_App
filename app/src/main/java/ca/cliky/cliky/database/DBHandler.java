@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHandler extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "cliky";
 
     protected static final String TABLE_USER = "tb_user";
@@ -89,11 +89,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXIST " + TABLE_USER);
-            db.execSQL("DROP TABLE IF EXIST " + TABLE_RETAILER);
-            db.execSQL("DROP TABLE IF EXIST " + TABLE_USER_OFFERS);
-            db.execSQL("DROP TABLE IF EXIST" + TABLE_DEPARTMENT);
-            db.execSQL("DROP TABLE IF EXIST" + TABLE_TYPE);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_RETAILER);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER_OFFERS);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_DEPARTMENT);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_TYPE);
             onCreate(db);
         }
 
@@ -106,6 +106,16 @@ public class DBHandler extends SQLiteOpenHelper {
         public void close() {
             if (dbHandler != null)
                 dbHandler.close();
+        }
+
+        @Override
+        public void onOpen(SQLiteDatabase db) {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_RETAILER);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER_OFFERS);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_DEPARTMENT);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_TYPE);
+            onCreate(db);
         }
 
     //SQLiteHelper

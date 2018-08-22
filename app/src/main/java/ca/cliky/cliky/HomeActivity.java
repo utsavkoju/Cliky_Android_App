@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 
+import ca.cliky.cliky.fragments.AboutFragment;
 import ca.cliky.cliky.fragments.AccountFragment;
 import ca.cliky.cliky.fragments.HomeFragment;
 import ca.cliky.cliky.fragments.OfferFragment;
@@ -60,6 +61,10 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_account:
                 fragment = new AccountFragment();
                 title = "Account";
+                break;
+            case R.id.navigation_about:
+                fragment = new AboutFragment();
+                title = "About";
                 break;
         }
         if(fragment != null)
